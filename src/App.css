@@ -1,0 +1,119 @@
+:root {
+  --bg-color: #282c34;
+  --bg-color-2: #272b32;
+}
+
+html,
+body {
+  background-color: var(--bg-color);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 2vmin;
+  pointer-events: none;
+}
+
+.sentenceCard {
+  /* Card Sizing */
+  width: 2.5in;
+  height: 4in;
+  border-radius: .25in;
+
+  /* Display Properties */
+  float: left;
+  margin: 10px;
+}
+
+.sentenceCard > .text {
+  /* Text Properties */
+  /* font-size: min(12vw, 8vh); */
+  font-size: 10;
+  font-family: Helvetica, sans-serif;
+  font-weight: bolder;
+  /* font-size: 26px; */
+  padding-left: 7%;
+  padding-right: 7%;
+  word-wrap: break-word;
+}
+
+.inputCard {
+  /* Card Sizing */
+  width: 2.5in;
+  height: 4in;
+  border-radius: .25in;
+
+  background-color: white;
+
+  /* Display Properties */
+  float: left;
+  margin: 10px;
+}
+
+.inputCard > textarea {
+   /* Text Properties */
+   /* font-size: min(16vw, 12vh); */
+   font-family: Helvetica, sans-serif;
+   font-weight: bolder;
+   font-size: 26px;
+   padding-left: 7%;
+   padding-right: 7%;
+   word-wrap: break-word;
+
+   height: 3.5in;
+   width: 2in;
+   border-radius: .25in;
+   border-color: transparent;
+   float: center;
+
+   resize: none;
+   overflow: hidden;
+}
+
+.board {
+  display: flex;
+
+  height: 40%;
+  height: 2in;
+
+  background-color: rgb(160, 170, 180);
+  color: white;
+}
+
+.App-header {
+  background-color: var(--bg-color);
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header>p {
+  margin: 0.25em;
+}
+
+.container {
+  overflow: auto;
+  display: flex;
+
+  justify-content: space-around;
+  padding: 1px;
+  margin: 1px;
+  height: 80%;
+}
+
+.timer {
+  width: 10%;
+  height: 10%;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  background-color: var(--bg-color-2);
+}

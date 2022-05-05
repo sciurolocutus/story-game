@@ -1,0 +1,35 @@
+{
+  "name": "story-game",
+  "version": "1.0.0",
+  "description": "A sentence-by-sentence story-building game.",
+  "main": "index.js",
+  "repository": "https://github.com/sciurolocutus/story-game",
+  "author": "Robert Busby",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1",
+    "react-timer-hook": "^3.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
