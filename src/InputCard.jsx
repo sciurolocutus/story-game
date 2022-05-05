@@ -5,12 +5,13 @@ import { useDrag } from 'react-dnd';
 function InputCard(ordinal) {
 
     const collection = (monitor) => {
+        console.log("Input card monitor: ", monitor);
         return {
             isDragging: !!monitor.isDragging()
         }
     };
 
-    const [content, setContent] = useState([]);
+    const [content, setContent] = useState("");
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "InputCard",
         item: {
@@ -21,6 +22,7 @@ function InputCard(ordinal) {
     }));
 
     const handleChange = (event) => {
+        console.log("Changing content: ", event.target.value);
         setContent(event.target.value);
     }
 
