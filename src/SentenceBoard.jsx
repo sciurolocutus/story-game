@@ -24,7 +24,9 @@ function SentenceBoard() {
 
   const addSentenceToBoard = (sentenceCard) => {
     console.log("addSentenceToBoard called: ", sentenceCard);
-    setSentenceCards([...sentenceCards, sentenceCard]);
+    setSentenceCards([...sentenceCards, sentenceCard].sort((a, b) => {
+      b.ordinal - a.ordinal
+    }));
   };
 
   if (sentenceCards) {
@@ -32,7 +34,9 @@ function SentenceBoard() {
     return (
       <section id="board" className="board" ref={drop}>
         {
-          sentenceCards
+          sentenceCards.map((card) => {
+            <SentenceCard ordinal={card.ordinal} content={card.content} />
+          })
         }
       </section>
     )
