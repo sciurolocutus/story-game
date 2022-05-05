@@ -2,17 +2,22 @@ import React from 'react';
 import { useState } from 'react';
 import { useDrag } from 'react-dnd';
 
-function SentenceCard(ordinal) {
+function InputCard(ordinal) {
+
+    const collection = (monitor) => {
+        return {
+            isDragging: !!monitor.isDragging()
+        }
+    };
+
     const [content, setContent] = useState([]);
-    const [{isDragging}, drag] = useDrag(() => ({
+    const [{ isDragging }, drag] = useDrag(() => ({
         type: "InputCard",
         item: {
             content: content,
             ordinal: ordinal
         },
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging()
-        })
+        collect: collection
     }));
 
     const handleChange = (event) => {
@@ -24,13 +29,13 @@ function SentenceCard(ordinal) {
             ref={drag}
             className="inputCard"
         >
-        
-        <textarea placeholder="Type your sentence here."
-            value={content} cols="5" rows="3" maxLength="100"
-            onChange={handleChange}/>
+
+            <textarea placeholder="Type your sentence here."
+                value={content} cols="5" rows="3" maxLength="100"
+                onChange={handleChange} />
 
         </div>
     )
 }
 
-export default SentenceCard;
+export default InputCard;

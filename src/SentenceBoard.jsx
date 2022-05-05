@@ -6,17 +6,23 @@ import { useDrop } from 'react-dnd';
 function SentenceBoard() {
   const [sentenceCards, setSentenceCards] = useState([]);
 
+  const collection = (monitor) => {
+    return {
+      isOver: !!monitor.isOver()
+    }
+  };
+
   const [collectedProps, drop] = useDrop(() => ({
     accept: "InputCard",
-    drop: (item) => addSentenceToBoard(item),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver()
-    })
-  }))
+    drop: (item) => {
+      addSentenceToBoard(item);
+    },
+    collect: collection
+  }));
 
   const addSentenceToBoard = (sentenceCard) => {
     this.setState({
-      sentenceCards: [...sentenceCards, <SentenceCard ordinal="5" content={item.state.content} />]
+      sentenceCards: [...sentenceCards, sentenceCard]
     })
   };
 
