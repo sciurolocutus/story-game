@@ -7,7 +7,6 @@ function SentenceBoard() {
   const [sentenceCards, setSentenceCards] = useState([]);
 
   const collection = (monitor) => {
-    console.log(monitor);
     return {
       isOver: !!monitor.isOver()
     }

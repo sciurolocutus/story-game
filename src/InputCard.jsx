@@ -5,7 +5,6 @@ import { useDrag } from 'react-dnd';
 function InputCard(ordinal) {
 
     const collection = (monitor) => {
-        console.log("Input card monitor: ", monitor);
         return {
             isDragging: !!monitor.isDragging()
         }
