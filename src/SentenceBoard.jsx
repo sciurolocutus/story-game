@@ -23,9 +23,13 @@ function SentenceBoard() {
 
   const addSentenceToBoard = (sentenceCard) => {
     console.log("addSentenceToBoard called: ", sentenceCard);
-    setSentenceCards([...sentenceCards, sentenceCard].sort((a, b) => {
+    console.log("Pre-state: ", sentenceCards);
+    let result = [...sentenceCards, sentenceCard];
+    result.sort((a, b) => {
       b.ordinal - a.ordinal
-    }));
+    });
+    setSentenceCards(result);
+    console.log("Post-state: ", sentenceCards);
   };
 
   if (sentenceCards) {
